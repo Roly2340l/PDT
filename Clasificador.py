@@ -74,3 +74,11 @@ while (True):
         print(f"Uso de memoria total: {mem.total}")
         print(f"Uso de memoria disponible: {mem.available}")
         print(f"Porcentaje de uso de memoria: {mem.percent}%")
+
+        # Guardamos la respuesta en un archivo de texto
+        archivo = open("emocion.txt", "w")
+        archivo.write(respuesta)
+        archivo.close()
+
+        # Finalmente, para aplicaciones internas del robot que requiera la respuesta se puede usar el archivo mv_respuesta.exp
+        # Este archivo expect envia el archivo .txt al robot
