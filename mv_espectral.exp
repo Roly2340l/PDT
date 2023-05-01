@@ -1,0 +1,8 @@
+#!/usr/bin/expect -f
+spawn scp features_espectral.npy rolinson@192.168.31.79:~/Personal/PDT
+
+set pass "contraseña_del_robot" 
+expect {
+    password: {send "$pass\r" ; exp_continue}
+    eof exit
+}
